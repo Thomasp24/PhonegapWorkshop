@@ -4,7 +4,6 @@
 var cameraInit = function () {
 
     $$("#TakePhoto").on("click", function (e) {
-        App.alert("bladiebla MOTHERFUCKER");
         navigator.camera.getPicture(succesCallback, errorCallback, {
             // Some common settings are 20, 50, and 100
             quality: 50,
@@ -20,9 +19,27 @@ var cameraInit = function () {
 
 
 }
-var succesCallback = function (data) {
-        App.alert("Picture taken! MOTHERFUCKER");
-    },
-    errorCallback = function (message) {
-        App.alert(message);
-    };
+var succesCallback = function (imgUrl) {
+    var d = new Date();
+    var date = d.getDate() + "-" + (d.getMonth() + 1) + "-" +  d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes();
+    $$('#itemList').append(getElement("Test", date, imgUrl));
+},
+errorCallback = function (message) {
+    App.alert(message);
+};
+
+var getElement = function(name, date, imgUrl) {
+    return  "<li class=\"contact-item\">" +
+        "<a class=\"item-link\" href=\"#\">" +
+        "<div class=\"item-content\">" +
+        "<div class=\"item-media\"><img src=\"" + imgUrl +"\" width=\"44\"></div>" +
+        "<div class=\"item-inner\">" +
+        "<div class=\"item-title-row\">" +
+        "<div class=\"item-title\">" + name + "</div>" +
+        "</div>" +
+        "<div class=\"item-subtitle\">" + date + "</div>" +
+        "</div>" +
+        "</div>" +
+        "</a>" +
+        "</li>";
+}
