@@ -18,15 +18,11 @@ else {
     );
 }
 
-// Add view
-var mainView = App.addView('.view-main', {
-    // Because we want to use dynamic navbar, we need to enable it for this view:
-    dynamicNavbar: true
-});
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+    cameraInit();
 });
 
 
