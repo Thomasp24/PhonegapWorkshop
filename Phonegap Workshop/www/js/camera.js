@@ -4,6 +4,7 @@
 var cameraInit = function () {
     var camera = navigator.camera;
     $$("#TakePhoto").on("click", function (e) {
+        App.alert("bladiebla");
         camera.getPicture(succesCallback, errorCallback, {});
     });
 
