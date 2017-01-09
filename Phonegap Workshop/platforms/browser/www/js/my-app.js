@@ -5,6 +5,19 @@ var myApp = new Framework7();
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
 
+if (Framework7.prototype.device.android) {
+    $$('head').append(
+        '<link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">' +
+        '<link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">'
+    );
+}
+else {
+    $$('head').append(
+        '<link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">' +
+        '<link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">'
+    );
+}
+
 // Add view
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
