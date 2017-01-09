@@ -15,7 +15,14 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.thomaspeters.phonegap.workshop"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.thomaspeters.phonegap.workshop"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.thomaspeters.phonegap.workshop"
+        }
+    }
 }
