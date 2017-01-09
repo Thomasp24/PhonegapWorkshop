@@ -4,7 +4,7 @@
 var cameraInit = function () {
 
     $$("#TakePhoto").on("click", function (e) {
-        App.alert("bladiebla");
+        App.alert("bladiebla MOTHERFUCKER");
         navigator.camera.getPicture(succesCallback, errorCallback, {
             // Some common settings are 20, 50, and 100
             quality: 50,
