@@ -20,9 +20,16 @@ var cameraInit = function () {
 
 }
 var succesCallback = function (imgUrl) {
-    var d = new Date();
-    var date = d.getDate() + "-" + (d.getMonth() + 1) + "-" +  d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes();
-    $$('#itemList').append(getElement("Test", date, imgUrl));
+    App.prompt('Title of your image?', 'Give a title',
+        function (value) {
+            var d = new Date();
+            var date = d.getDate() + "-" + (d.getMonth() + 1) + "-" +  d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes();
+            $$('#itemList').append(getElement(value, date, imgUrl));
+        },
+        function (value) {
+            App.alert('Your photo has not been added');
+        }
+    );
 },
 errorCallback = function (message) {
     App.alert(message);
