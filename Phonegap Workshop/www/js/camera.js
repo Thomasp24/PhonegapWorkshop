@@ -21,7 +21,7 @@ var cameraInit = function () {
 
 }
 var succesCallback = function (data) {
-        App.alert("Picture taken!");
+        App.alert("Picture taken! MOTHERFUCKER");
     },
     errorCallback = function (message) {
         App.alert(message);
