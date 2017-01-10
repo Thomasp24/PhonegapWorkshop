@@ -8,13 +8,15 @@ var $$ = Dom7;
 if (Framework7.prototype.device.android) {
     $$('head').append(
         '<link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">' +
-        '<link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">'
+        '<link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">' +
+        '<link rel="stylesheet" href="lib/framework7/css/material-icons.css">'
     );
 }
 else {
     $$('head').append(
         '<link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">' +
-        '<link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">'
+        '<link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">' +
+        '<link rel="stylesheet" href="lib/framework7/css/framework7-icons.css">'
     );
 }
 
@@ -25,6 +27,9 @@ $$(document).on('deviceready', function() {
     cameraInit();
 });
 
+$$('.open-help').on('click', function () {
+    App.popover('.popover-help', this);
+});
 
 // Now we need to run the code that will be executed only for About page.
 

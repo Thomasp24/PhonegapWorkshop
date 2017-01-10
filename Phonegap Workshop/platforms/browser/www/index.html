@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
-    <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -25,9 +15,7 @@
     <script type="text/javascript" src="js/my-app.js"></script>
     <script type="text/javascript" src="js/camera.js"></script>
 
-    <!-- Your app title -->
     <title>Phonegap Workshop</title>
-
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -38,12 +26,6 @@
 
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <p>Menu</p>
-        </div>
-    </div>
 
     <!-- Views -->
     <div class="views">
@@ -52,14 +34,12 @@
             <!-- Top Navbar-->
             <div class="navbar">
                 <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="left">
+                        <a href="#" data-popover=".popover-help" class="link icon-only open-popover open-help"><i class="f7-icons">help</i></a>
+                    </div>
                     <div class="center sliding">Phonegap Workshop</div>
                     <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        <a href="#" class="link icon-only" id="TakePhoto"><i class="f7-icons">camera</i></a>
                     </div>
                 </div>
             </div>
@@ -79,17 +59,18 @@
                     </div>
                 </div>
             </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link"> </a>
-                    <a href="#" class="link" id="TakePhoto"><i class="icon icon-camera"></i></a>
-                </div>
-            </div>
         </div>
     </div>
 
+    <div class="popover popover-help">
+        <div class="popover-angle"></div>
+        <div class="popover-inner">
+            <div class="content-block">
+                <p>Help</p>
+                <p>Make a photo by clicking on the <i class="f7-icons">camera</i> icon, on the top right corner.</p>
+            </div>
+        </div>
+    </div>
 
 </body>
 
